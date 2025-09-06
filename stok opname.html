@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Laporan Stock Opname</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+/* CSS di sini */
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#main-container {
+  width: 90%;
+  max-width: 900px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 14px;
+}
+
+tbody tr:last-child {
+  font-weight: bold;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Gaya default */
+.colorless thead {
+  background-color: black;
+  color: white;
+}
+.colorless tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+  color: black;
+}
+.colorless tbody tr:nth-child(odd) {
+  background-color: white;
+  color: black;
+}
+.colorless button {
+  background-color: #f2f2f2;
+  color: black;
+  border: 1px solid black;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+/* Gaya berwarna */
+.colorful thead {
+  background-color: rgb(255, 200, 117);
+  color: white;
+}
+.colorful tbody tr:nth-child(odd) {
+  background-color: rgb(245, 239, 153);
+  color: black;
+}
+.colorful tbody tr:nth-child(even) {
+  background-color: rgb(255, 196, 70);
+  color: white;
+}
+.colorful button {
+  background-color: rgb(235, 212, 112);
+  color: white;
+  border: 1px solid black;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="main-container" class="colorless">
+<h2>LAPORAN STOCK OPNAME BARANG PT. ABC</h2>
+<p class="subtitle">Periode 1-31 Agustus 2021</p>
+<div id="table-container">
+<table>
+<thead>
+<tr>
+<th rowspan="2">Harga Jual</th>
+<th colspan="2">Stok Awal</th>
+<th colspan="2">Penjualan</th>
+<th colspan="2">Barang Masuk</th>
+</tr>
+<tr>
+<th>Jumlah</th>
+<th>Nilai</th>
+<th>Jumlah</th>
+<th>Nilai</th>
+<th>Jumlah</th>
+<th>Nilai</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25,000</td>
+<td>20</td>
+<td>400,000</td>
+<td>7</td>
+<td>175,000</td>
+<td>30</td>
+<td>900,000</td>
+</tr>
+<tr>
+<td>20,000</td>
+<td>20</td>
+<td>400,000</td>
+<td>11</td>
+<td>440,000</td>
+<td>30</td>
+<td>600,000</td>
+</tr>
+<tr>
+<td>20,000</td>
+<td>20</td>
+<td>400,000</td>
+<td>12</td>
+<td>240,000</td>
+<td>30</td>
+<td>450,000</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>20</td>
+<td>100,000</td>
+<td>4</td>
+<td>40,000</td>
+<td>30</td>
+<td>150,000</td>
+</tr>
+<tr>
+<td>40,000</td>
+<td>20</td>
+<td>400,000</td>
+<td>6</td>
+<td>240,000</td>
+<td>30</td>
+<td>600,000</td>
+</tr>
+<tr>
+<td>130,000</td>
+<td>20</td>
+<td>2,000,000</td>
+<td>17</td>
+<td>2,210,000</td>
+<td>30</td>
+<td>3,000,000</td>
+</tr>
+<tr>
+<td>150,000</td>
+<td>20</td>
+<td>2,000,000</td>
+<td>2</td>
+<td>300,000</td>
+<td>30</td>
+<td>3,000,000</td>
+</tr>
+<tr>
+<td>250,000</td>
+<td>20</td>
+<td>4,000,000</td>
+<td>1</td>
+<td>250,000</td>
+<td>30</td>
+<td>6,000,000</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>20</td>
+<td>100,000</td>
+<td>5</td>
+<td>50,000</td>
+<td>30</td>
+<td>150,000</td>
+</tr>
+<tr>
+<td>75,000</td>
+<td>20</td>
+<td>1,400,000</td>
+<td>15</td>
+<td>1,125,000</td>
+<td>30</td>
+<td>2,100,000</td>
+</tr>
+<tr>
+<td>25,000</td>
+<td>20</td>
+<td>400,000</td>
+<td>13</td>
+<td>325,000</td>
+<td>30</td>
+<td>600,000</td>
+</tr>
+<tr>
+<td>40,000</td>
+<td>20</td>
+<td>700,000</td>
+<td>17</td>
+<td>680,000</td>
+<td>30</td>
+<td>1,050,000</td>
+</tr>
+<tr>
+<td>50,000</td>
+<td>20</td>
+<td>800,000</td>
+<td>6</td>
+<td>300,000</td>
+<td>30</td>
+<td>1,200,000</td>
+</tr>
+<tr>
+<td>30,000</td>
+<td>20</td>
+<td>300,000</td>
+<td>11</td>
+<td>330,000</td>
+<td>30</td>
+<td>450,000</td>
+</tr>
+<tr>
+<td>35,000</td>
+<td>20</td>
+<td>600,000</td>
+<td>10</td>
+<td>350,000</td>
+<td>30</td>
+<td>900,000</td>
+</tr>
+<tr>
+<td></td>
+<td>300</td>
+<td>14,100,000</td>
+<td>137</td>
+<td>7,055,000</td>
+<td>450</td>
+<td>21,150,000</td>
+</tr>
+</tbody>
+</table>
+<button>Change to Colorful</button>
+</div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('button').click(function() {
+    $('#main-container').toggleClass('colorful colorless');
+    
+    // Mengubah teks tombol
+    var isColorful = $('#main-container').hasClass('colorful');
+    if (isColorful) {
+      $(this).text('Change to Colorless');
+    } else {
+      $(this).text('Change to Colorful');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
