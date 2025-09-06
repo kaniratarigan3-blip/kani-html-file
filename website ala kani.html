@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Site</title>
+    <style>
+        body {
+            background-color: #F8F4DB; /* Warna dasar kuning pucat */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+            position: relative;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #DDEBFD; /* Warna dasar biru pucat */
+            border: 5px dashed #A5C9F1;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(218, 38, 143, 0.452);
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dekorasi latar belakang */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #FFC0CB, #F8E8C9, #D9F1F8, #FFFFFF);
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .header-top {
+            text-align: right;
+            font-size: 0.8em;
+            color: #8ea7db;
+            margin-bottom: 10px;
+        }
+
+        .menu-bar {
+            background-color: #FFFFFF;
+            border: 3px solid #D9F1F8;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(145, 4, 102, 0.1);
+        }
+
+        .menu-item {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: lowercase;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #800080; }/* Warna ungu pada tulisan */
+
+        .menu-item:nth-child(1) { background-color: #BBE0FF; border-color: #A5C9F1; }
+        .menu-item:nth-child(2) { background-color: #FFC0CB; border-color: #FF99AA; }
+        .menu-item:nth-child(3) { background-color: #FFEBAD; border-color: #FFDDAA; }
+
+        .main-content {
+            background-color: #F8F4DB;
+            border: 3px solid #A5C9F1;
+            border-radius: 20px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #FFC0CB;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .profile-text {
+            margin-left: 20px;
+            color: #FF99AA;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-text h1 {
+            font-size: 2em;
+            margin: 0;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+        }
+        
+        .profile-text h1::after {
+            content: '✿';
+            color: #FFDDAA;
+            margin-left: 5px;
+        }
+
+        .profile-text p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            color: #FF69B4; /* Pink tua */
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to right, #FFC0CB, #F8E8C9, #D9F1F8, #FFFFFF);
+            opacity: 0.7;
+            z-index: 0;
+        }
+        
+        .divider {
+            height: 3px;
+            background-color: #d1759b;
+            margin: 20px 0;
+        }
+
+        .bottom-section {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .about-me {
+            flex: 2;
+            padding: 10px;
+            color: #FF2086; /* Biru tua */
+        }
+
+        .about-me h2 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            color: #F481B6; /* Tetap pink tua untuk judul h2 */
+        }
+        
+        .about-me h2::after {
+            content: '♡';
+            color: #F481B6;
+            margin-left: 5px;
+        }
+
+        .about-me p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #FF2086; /* Biru tua */
+        }
+        
+        .about-me .text-box {
+            background-color: #FFFFFF;
+            border: 2px dashed #D9F1F8;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .about-me p span {
+            color: #FF99AA;
+        }
+
+        .button-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 10px 15px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            border: 2px solid transparent;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-decoration: none; /* Menghilangkan garis bawah pada link */
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Menambahkan shadow pada teks tombol */
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:nth-child(1) { background-color: #FFC0CB; border-color: #FF99AA; }
+        .button:nth-child(2) { background-color: #FFEBAD; border-color: #e2b269; }
+        .button:nth-child(3) { background-color: #94c8d8; border-color: #618ab9; }
+        .button:nth-child(4) { background-color: #BBE0FF; border-color: #8db1db; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-top">
+        by kani
+    </div>
+
+    <div class="menu-bar">
+        <div class="menu-item">about</div>
+        <div class="menu-item">things</div>
+        <div class="menu-item">gallery</div>
+    </div>
+
+    <div class="main-content">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="https://raw.githubusercontent.com/kaniratarigan3-blip/kanipic/refs/heads/main/meme.jfif" alt="Profile Image">
+            </div>
+            <div class="profile-text">
+                <h1>My Interest</h1>
+                <p>Hi, Welcome To My Page!</p>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+
+        <div class="bottom-section">
+            <div class="about-me">
+                <h2>about me</h2>
+                <div class="text-box">
+                    <p>Hehe, hello! I'm Kani. A college student from STMIK IKMI CIREBON and currently on third semester. This page is willing to show you my favourite music, games, hobby, and characters!</p>
+                </div>
+                <p>Just click the buttons on the right side and enjoy! This web design is credited to xiumai__ on pinterest.</p>
+            </div>
+           <div class="button-group">
+                <a href="https://www.spotify.com/" class="button music-button">Music</a>
+                <a href="https://hsr.hoyoverse.com/en-us/" class="button games-button">Games</a>
+                <a href="https://www.tiktok.com/@bluejamw" class="button hobby-button">Hobby</a>
+                <a href="https://www.tiktok.com/@anime.gifx/video/7529582129529949442" class="button characters-button">Characters</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
